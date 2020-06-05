@@ -1,0 +1,26 @@
+{
+  "name": "image-text-editor",
+  "version": "0.0.1",
+  "description": "图文编辑组件",
+  "main": "dist/index.js",
+  "module": "dist/index.esm.js",
+  "authors": {
+    "name": "limeng",
+    "email": ""
+  },
+  "repository": "git@github.com:mengro/image-text-editor.git/image-text-editor",
+  "scripts": {
+    "dev": "father doc dev",
+    "build": "father build"
+  },
+  "peerDependencies": {
+    "react": "16.x"
+  },
+  "devDependencies": {
+    "father": "^2.16.0"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "antd": "^4.3.1"
+  }
+}
