@@ -1,8 +1,8 @@
 {
-  "vendors.css": "/static/css/vendors.1997c6d82afec53c49ad.css",
-  "vendors.js": "/static/js/vendors.88611d2b.js",
-  "app.js": "/static/js/app.1997c6d82afec53c49ad.js",
-  "src-index.css": "/static/css/src-index.1997c6d82afec53c49ad.css",
-  "src-index.js": "/static/js/src-index.f95774cb.js",
-  "index.html": "/index.html"
+  "vendors.css": "/image-text-editor/static/css/vendors.97aed19729b69036718b.css",
+  "vendors.js": "/image-text-editor/static/js/vendors.67841d36.js",
+  "app.js": "/image-text-editor/static/js/app.97aed19729b69036718b.js",
+  "src-index.css": "/image-text-editor/static/css/src-index.97aed19729b69036718b.css",
+  "src-index.js": "/image-text-editor/static/js/src-index.f95774cb.js",
+  "index.html": "/image-text-editor/index.html"
 }
