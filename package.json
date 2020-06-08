@@ -11,7 +11,8 @@
   "repository": "git@github.com:mengro/image-text-editor.git/image-text-editor",
   "scripts": {
     "dev": "father doc dev",
-    "build": "father build"
+    "build": "father build",
+    "build-doc": "father doc build"
   },
   "peerDependencies": {
     "react": "16.x"

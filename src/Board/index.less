@@ -1,0 +1,195 @@
+@background: 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQBAAAAAD/aE28AAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAAAmJLR0QADzoyPqMAAAAHdElNRQfiAR4XACbRmik9AAAAF0lEQVQI12P4DwRngICBQgaIAHEoZAAASHBywR1kvCwAAAAldEVYdGRhdGU6Y3JlYXRlADIwMTgtMDEtMzBUMTU6MDA6MzgrMDg6MDC/tpEdAAAAJXRFWHRkYXRlOm1vZGlmeQAyMDE4LTAxLTMwVDE1OjAwOjM4KzA4OjAwzuspoQAAAABJRU5ErkJggg==';
+@borderColor: #e8e8e8;
+@activeColor: #1890ff;
+@dangerColor: red;
+
+/* container */
+.board-container {
+  height: 800px;
+  display: flex;
+  justify-content: space-between;
+  .board-components {
+    position: relative;
+  }
+  .board-body {
+    flex: 1;
+    background: url(@background);
+    background-size: 10px;
+    .boardBody-container {
+      width: 100%;
+      height: 100%;
+      background: rgba(235, 240, 245, 0.9);
+      position: relative;
+      .board-layer-counter {
+        position: absolute;
+        right: 0;
+        padding: 12px;
+        color: #666;
+      }
+      .fabric-root {
+      }
+      .boardBody-operator {
+        position: absolute;
+        z-index: 2;
+        bottom: 0;
+        right: 0;
+        padding: 16px;
+        font-size: 18px;
+        .icon {
+          width: 30px;
+          height: 30px;
+          background: #ffffff;
+          line-height: 30px;
+          border-radius: 50%;
+          display: inline-block;
+          vertical-align: middle;
+          text-align: center;
+          margin: 0 6px;
+          cursor: pointer;
+        }
+        .boardBody-operator-primary {
+          &:hover {
+            background: @activeColor;
+            color: #ffffff;
+          }
+        }
+        .boardBody-operator-delete {
+          &:hover {
+            background: @dangerColor;
+            color: #ffffff;
+          }
+        }
+      }
+    }
+  }
+  .board-controller {
+    width: 300px;
+    border-left: 1px solid @borderColor;
+    position: relative;
+    .board-baseInfo {
+      border-top: 1px solid @borderColor;
+      padding-top: 16px;
+      width: 100%;
+      position: absolute;
+      bottom: 0;
+    }
+  }
+}
+/* sider */
+.board-sider-container {
+  border-right: 1px solid @borderColor;
+  height: 100%;
+  position: relative;
+  z-index: 2;
+  li {
+    white-space: nowrap;
+    padding: 12px 4px;
+    margin: 0 8px;
+    text-align: center;
+    color: #666;
+    font-size: 13px;
+    border-bottom: 1px solid #d1d1d1;
+    line-height: 1.2;
+    cursor: pointer;
+    user-select: none;
+    &.disabled {
+      cursor: not-allowed;
+    }
+  }
+}
+/* drawer */
+.board-drawer {
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 100%;
+  overflow: hidden;
+  z-index: 1;
+  text-align: center;
+  border-right: 1px solid @borderColor;
+  background: #ffffff;
+  box-shadow: rgba(0, 0, 0, 0.4) 1px 0 2px 0px;
+}
+/* layerList */
+.layerList-title {
+  text-align: left;
+  padding: 16px;
+  font-size: 15px;
+  border-bottom: 1px solid #ddd;
+  margin-bottom: 16px;
+  .layerList-tip {
+    margin-left: 4px;
+    cursor: pointer;
+    font-size: 16px;
+  }
+}
+.layerList-root {
+  overflow-y: auto;
+  height: 100%;
+  .layerList-row {
+    border: 1px solid #d1d1d1;
+    text-align: left;
+    padding: 12px 8px;
+    margin: 0 16px 16px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    cursor: pointer;
+    user-select: none;
+    &:hover, &.active {
+      border-color: @activeColor;
+    }
+    .layerList-icon {
+      margin-right: 4px;
+      vertical-align: middle;
+      display: inline-block;
+      width: 20px;
+      text-align: center;
+    }
+    .layerList-name {
+      vertical-align: middle;
+      display: inline-block;
+    }
+  }
+}
+/* controller */
+.board-controller-container {
+  padding: 16px 0;
+  border-bottom: 1px solid @borderColor;
+  overflow: hidden;
+  margin: 0;
+  .board-controller-row {
+    display: flex;
+    padding: 12px 32px;
+    justify-content: space-around;
+    align-items: center;
+    &.withBorder {
+      border-bottom: 1px dashed @borderColor;
+    }
+    .board-controller-label {
+      width: 50px;
+    }
+    .board-controller-inputs {
+      width: 86%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+  }
+}
+.board-controller-replace {
+  padding: 16px 0;
+  text-align: center;
+  border-bottom: 1px solid @borderColor;
+}
+.board-controller-tip {
+  padding: 16px;
+  color: @dangerColor;
+  .board-controller-tip-row {
+    margin: 8px 0;
+    text-indent: 8px;
+    .anticon {
+      margin-right: 8px;
+    }
+  }
+}
