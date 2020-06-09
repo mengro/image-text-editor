@@ -1,7 +1,7 @@
 import React, { memo, Fragment } from 'react'
 import { InputNumber, Icon } from 'antd'
 import PropTypes from 'prop-types'
-import { halfInputStyle } from './config'
+import { halfInputStyle } from '../config'
 
 function ImageController({
   children,

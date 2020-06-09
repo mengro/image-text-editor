@@ -2,15 +2,16 @@ import React, { PureComponent } from 'react'
 import { Icon, Empty, Modal } from 'antd'
 import PropTypes from 'prop-types'
 import { fabric } from 'fabric'
-import { SingleImgUpload, objectTools } from '@lib/item-admin-lib'
-import Sider from './Sider'
-import Drawer from './Drawer'
-import ImageController from './ImageController'
-import TextController from './TextController'
-import LayerList from './LayerList'
-import { uploadImageAction, uploadImage } from '@/services/common'
+import Sider from './components/Sider'
+import Drawer from './components/Drawer'
+import ImageController from './components/ImageController'
+import TextController from './components/TextController'
+import LayerList from './components/LayerList'
+import ImageUpload from './components/ImageUpload'
+import { uploadImageAction, uploadImage } from '../../services'
 import { defaultTag, background, totalLimit, defaultInitTextsOptions, defaultTextOptions, defaultImageOptions, defaultTextControls, defaultImageControls } from './config'
-import { copyProperties, blobToFile, loadImg } from './utils'
+import { copyProperties, blobToFile, loadImg, filterUndefined } from '../../utils'
+import './index.less'
 
 export default class Board extends PureComponent {
   constructor() {
@@ -76,7 +77,7 @@ export default class Board extends PureComponent {
           }, item.width, item.height, item.zindex)
         }
         if (item.type === 'text' && item.text) {
-          const options = objectTools.filterUndefined({
+          const options = filterUndefined({
             ...item,
             text: item.writing,
             left: left + item.left,
@@ -477,7 +478,7 @@ export default class Board extends PureComponent {
             {
               currentTab === 'tab_image' &&
               <div style={{marginTop: 32}}>
-                <SingleImgUpload
+                <ImageUpload
                   sortable={false}
                   limit={1}
                   action={uploadImageAction}
@@ -487,7 +488,7 @@ export default class Board extends PureComponent {
                     disabled: boolLimitOn
                   }}
                 >
-                </SingleImgUpload>
+                </ImageUpload>
               </div>
             }
             {
@@ -530,7 +531,7 @@ export default class Board extends PureComponent {
               onChange={this.updateImageRender}
               currentImageControls={currentImageControls}
             >
-              <SingleImgUpload
+              <ImageUpload
                 sortable={false}
                 limit={1}
                 action={uploadImageAction}
@@ -542,7 +543,7 @@ export default class Board extends PureComponent {
                 buttonText="替换图片"
                 onChange={this.replaceHandle}
               >
-              </SingleImgUpload>
+              </ImageUpload>
             </ImageController>
           }
           {

@@ -5,4 +5,5 @@ export default {
     base: '/image-text-editor',
     dest: 'docs'
   },
+  cssModules: false
 }

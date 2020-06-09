@@ -1,9 +1,8 @@
 import React, { memo, Fragment } from 'react'
-import { InputNumber, Slider, Input, Radio } from 'antd'
-import { SelectShell } from '@lib/item-admin-lib'
+import { InputNumber, Slider, Input, Radio, Select } from 'antd'
 import ColorPicker from './ColorPicker'
 import PropTypes from 'prop-types'
-import { halfInputStyle, fontFamilyList, lockedRadioOptions } from './config'
+import { halfInputStyle, fontFamilyList, lockedRadioOptions } from '../config'
 
 const RadioGroup = Radio.Group
 
@@ -49,12 +48,20 @@ function TextController({
             字体
           </span>
           <span className="board-controller-inputs">
-            <SelectShell
-              data={fontFamilyList}
+            <Select
               onChange={value => onChange('fontFamily', value)}
               value={currentTextControls.fontFamily}
             >
-            </SelectShell>
+              {
+                fontFamilyList.map(font => {
+                  return (
+                    <Select.Option value={font.value}>
+                      {font.label}
+                    </Select.Option>
+                  )
+                })
+              }
+            </Select>
           </span>
         </li>
         <li className="board-controller-row">

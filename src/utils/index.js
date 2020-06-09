@@ -1,3 +1,15 @@
+export const filterUndefined = params => {
+  Object.keys(params).forEach(key => {
+    if (params[key] === undefined) {
+      delete params[key]
+    }
+    if (params[key] === null) {
+      delete params[key]
+    }
+  })
+  return params
+}
+
 export const copyProperties = (target, source) => {
   const result = {...target}
   Object.keys(target).forEach(key => {
