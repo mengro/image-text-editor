@@ -55,7 +55,7 @@ function TextController({
               {
                 fontFamilyList.map(font => {
                   return (
-                    <Select.Option value={font.value}>
+                    <Select.Option key={font.value} value={font.value}>
                       {font.label}
                     </Select.Option>
                   )
