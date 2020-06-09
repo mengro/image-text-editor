@@ -1,8 +1,8 @@
 {
-  "vendors.css": "/image-text-editor/static/css/vendors.97aed19729b69036718b.css",
-  "vendors.js": "/image-text-editor/static/js/vendors.67841d36.js",
-  "app.js": "/image-text-editor/static/js/app.97aed19729b69036718b.js",
-  "src-index.css": "/image-text-editor/static/css/src-index.97aed19729b69036718b.css",
-  "src-index.js": "/image-text-editor/static/js/src-index.f95774cb.js",
+  "vendors.css": "/image-text-editor/static/css/vendors.0bf4bd621921c4f9763d.css",
+  "vendors.js": "/image-text-editor/static/js/vendors.eed2185d.js",
+  "app.js": "/image-text-editor/static/js/app.0bf4bd621921c4f9763d.js",
+  "src-routes-board-index.css": "/image-text-editor/static/css/src-routes-board-index.0bf4bd621921c4f9763d.css",
+  "src-routes-board-index.js": "/image-text-editor/static/js/src-routes-board-index.344c55a6.js",
   "index.html": "/image-text-editor/index.html"
 }
